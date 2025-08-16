@@ -1,0 +1,23 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Quix</h1>
+    <form action="" method="post">
+
+        {% for q in quiz %}
+            <p><b>{{ loop.index }}. {{ q.question }}</b></p>
+            {% for option in q.options %}
+                <input type="radio" name="q{{ loop.index0 }}" value="{{ option }}" required> {{ option }} <br>
+            {% endfor %}
+        {% endfor %}
+        <br>
+        <button type="submit">Submit</button>
+
+
+    </form>
+</body>
+</html>
